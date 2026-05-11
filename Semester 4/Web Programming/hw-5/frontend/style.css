@@ -1,0 +1,10 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+.row { display: flex; margin: 8px 0; }
+.row label { width: 120px; }
+.row input, .row select, .row textarea { flex: 1; padding: 6px; }
+.actions { margin-top: 12px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+a { margin-right: 10px; }
+.error { color: #b00020; }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="DeleteCtrl">
+<div class="container">
+    <h2>Manage Recipes</h2>
+    <p><a href="index.html">Home</a> <a href="add.html">Add New</a></p>
+
+    <p class="error" ng-if="error" ng-bind="error"></p>
+
+    <table>
+        <tr><th>Name</th><th>Author</th><th>Type</th><th>Actions</th></tr>
+        <tr ng-repeat="item in items">
+            <td ng-bind="item.name"></td>
+            <td ng-bind="item.author"></td>
+            <td ng-bind="item.type"></td>
+            <td>
+                <a ng-href="edit.html?id={{item.id}}">Edit</a>
+                <button type="button" ng-click="remove(item.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

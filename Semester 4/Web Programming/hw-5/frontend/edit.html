@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="EditCtrl">
+<div class="container">
+    <h2>Edit Recipe</h2>
+    <p><a href="manage.html">Back to Manage</a></p>
+
+    <p class="error" ng-if="error" ng-bind="error"></p>
+
+    <form ng-submit="save()">
+        <div class="row">
+            <label>Author</label>
+            <input type="text" ng-model="form.author">
+        </div>
+
+        <div class="row">
+            <label>Name</label>
+            <input type="text" ng-model="form.name">
+        </div>
+
+        <div class="row">
+            <label>Type</label>
+            <input type="text" ng-model="form.type">
+        </div>
+
+        <div class="row">
+            <label>Recipe</label>
+            <textarea rows="6" ng-model="form.recipe"></textarea>
+        </div>
+
+        <div class="actions">
+            <button type="submit">Save</button>
+            <a href="manage.html" onclick="return confirm('Cancel editing?')">Cancel</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

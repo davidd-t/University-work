@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="BrowseCtrl">
+<div class="container">
+    <h2>Browse Recipes</h2>
+    <p><a href="index.html">Home</a></p>
+
+    <div class="row">
+        <label>Recipe type:</label>
+        <select ng-model="selectedType">
+            <option value="">All</option>
+            <option ng-repeat="t in types" ng-value="t" ng-bind="t"></option>
+        </select>
+    </div>
+
+    <div class="actions">
+        <button ng-click="loadRecipes()">Load</button>
+    </div>
+
+    <p>Previous filter: <span ng-bind="prevFilter"></span></p>
+
+    <table>
+        <tr><th>Name</th><th>Author</th><th>Type</th><th>Recipe</th></tr>
+        <tr ng-repeat="item in recipes">
+            <td ng-bind="item.name"></td>
+            <td ng-bind="item.author"></td>
+            <td ng-bind="item.type"></td>
+            <td ng-bind="item.recipe"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
